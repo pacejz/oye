@@ -3,11 +3,24 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 import React from 'react'
 
-export default function Button({ label, theme, onPress }) {
+
+
+export default function Button({ label, theme = "white", onPress }) {
+    const themes = {
+        white: {
+            text: "#E9652E",
+            background: "#FFF",
+        },
+        orange: {
+            text: "#FFF",
+            background: "#E9652E",
+        },
+    };
+
     if (theme === "primary") {
         return <View style={[styles.buttonContainer, { borderWidth: 4, borderColor: "#ffd33d", borderRadius: 18 }]}>
             <Pressable
-                style={[styles.button, { backgroundColor: "#fff" }]}
+                style={[styles.button, { backgroundColor: "#E9652E" }]}
                 onPress={onPress}
             >
                 <FontAwesome
@@ -16,19 +29,22 @@ export default function Button({ label, theme, onPress }) {
                     color="#25292e"
                     style={styles.buttonIcon}
                 />
-                <Text style={[styles.buttonLabel, { color: "#25292e" }]}>{label}</Text>
+                <Text style={[styles.buttonLabel, { color: "#FFF" }]}>{label}</Text>
             </Pressable>
         </View>
     } else {
         return (
             <View style={styles.buttonContainer}>
-                <Pressable style={styles.button} onPress={onPress}>
-                    <Text style={styles.buttonLabel}>{label}</Text>
+                <Pressable style={[styles.button, { backgroundColor: themes[theme].background }]} onPress={onPress}>
+                    <Text style={[styles.buttonLabel, { color: themes[theme].text }]}>{label}</Text>
                 </Pressable>
             </View>
         )
     }
 }
+
+
+
 
 const styles = StyleSheet.create({
     buttonContainer: {
@@ -40,7 +56,7 @@ const styles = StyleSheet.create({
         padding: 3,
     },
     button: {
-        borderRadius: 10,
+        borderRadius: 30,
         width: '100%',
         height: '100%',
         alignItems: 'center',
@@ -51,7 +67,7 @@ const styles = StyleSheet.create({
         paddingRight: 8,
     },
     buttonLabel: {
-        color: '#fff',
+        color: '#E9652E',
         fontSize: 16,
     },
 })
