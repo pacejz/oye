@@ -7,7 +7,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-
 - gesture handler (swipe to the right or left for onboarding) https://www.npmjs.com/package/react-native-gesture-handler
 - Scrolling view with list of available events
 - Authentication of users
