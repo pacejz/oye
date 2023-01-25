@@ -1,14 +1,16 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from 'react-native';
-import ImageViewer from './components/ImageViewer';
-import CircleButton from './components/CircleButton';
-import IconButton from './components/IconButton';
+import ImageViewer from '../atoms/ImageViewer';
+import CircleButton from '../atoms/CircleButton';
+import IconButton from '../atoms/IconButton';
 
 import * as ImagePicker from 'expo-image-picker';
-import Button from './components/Button';
+import Button from '../atoms/Button';
 import { useState } from "react";
 
-const PlaceholderImage = require('./assets/images/background-image.png');
+const PlaceholderImage = require('../../assets/images/background-image.png');
+
+
 
 export default function App() {
   const [showAppOptions, setShowAppOptions] = useState(false);
