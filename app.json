@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "oye-app",
-    "slug": "oye-app",
+    "name": "oye",
+    "slug": "oye",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
