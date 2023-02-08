@@ -1,23 +1,24 @@
 import { View, Image, ImageBackground, StyleSheet, Text } from 'react-native'
 import Button from '../atoms/Button';
+import Logo from '../atoms/Logo';
 
 const backgroundImage = require('../../assets/images/background1.jpg');
-const appIcon = require('../../assets/images/oye_logo.png');
+const appIcon = require('../../assets/images/oye_logo_white.png');
 
-export default function Pages() {
+export default function Onboarding({navigation}) {
 
   const onSignUp = () => {
-    alert("Signing up");
+    navigation.navigate('register')
   };
   const onLogin = () => {
-    alert("Logging up");
+    navigation.navigate('signin')
   };
 
   return (
     <View style={styles.container}>
       <ImageBackground source={backgroundImage} resizeMode="cover" style={styles.imageBackground}>
-      <View style={styles.imageContainer}>
-        <Image source={appIcon} style={styles.image}></Image>
+      <View style={styles.logoContainer}>
+        <Logo color="white" />
       </View>
       <View style={styles.subtitleContainer}>
         <Text style={styles.subtitle}>Connect with your neighbours</Text>
@@ -39,16 +40,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   imageBackground: {
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
-  imageContainer: {
-    flex: 1/3,
+  logoContainer: {
+    flex: 1,
     paddingTop: 40,
   },
   footerContainer: {
-    flex: 1 / 3,
+    flex: 1,
     alignItems: 'center',
   },
   optionsContainer: {
@@ -61,14 +61,10 @@ const styles = StyleSheet.create({
   },
   subtitleContainer: {
     paddingTop: 120,
-    flex: 1/2
+    flex: 1
   },
   subtitle: {
     fontSize: 20,
     color: "#FFF"
-  },
-  image: {
-    width: 100,
-    height: 30,
   }
 });

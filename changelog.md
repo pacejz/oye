@@ -7,7 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- gesture handler (swipe to the right or left for onboarding) https://www.npmjs.com/package/react-native-gesture-handler
+- Send information to a firebase database
+- Reset password view
+- Gesture handler (swipe to the right or left for onboarding) https://www.npmjs.com/package/react-native-gesture-handler
 - Scrolling view with list of available events
 - Authentication of users
 - Profile creation
@@ -19,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Readme file
 - React native initialisation uising expo
 - Add typescript as default language
 - Adding onboarding page

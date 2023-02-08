@@ -4,7 +4,6 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 import React from 'react'
 
 
-
 export default function Button({ label, theme = "white", onPress }) {
     const themes = {
         white: {
@@ -29,14 +28,14 @@ export default function Button({ label, theme = "white", onPress }) {
                     color="#25292e"
                     style={styles.buttonIcon}
                 />
-                <Text style={[styles.buttonLabel, { color: "#FFF" }]}>{label}</Text>
+                <Text style={[styles.buttonLabel, { color: "#FFF" }]}>{label.toUppercase()}</Text>
             </Pressable>
         </View>
     } else {
         return (
             <View style={styles.buttonContainer}>
                 <Pressable style={[styles.button, { backgroundColor: themes[theme].background }]} onPress={onPress}>
-                    <Text style={[styles.buttonLabel, { color: themes[theme].text }]}>{label}</Text>
+                    <Text style={[styles.buttonLabel, { color: themes[theme].text }]}>{label.toUpperCase()}</Text>
                 </Pressable>
             </View>
         )
